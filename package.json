@@ -1,41 +1,33 @@
 {
-  "name": "webshot",
-  "version": "0.14.0",
-  "description": "Easy website screenshots",
-  "author": "Brenden Kokoszka",
-  "contributors": [
-    {
-      "name": "Brenden Kokoszka",
-      "email": "brenden.kokoszka@gmail.com"
-    },
-    {
-      "name": "Matthew Chase Whittemore",
-      "email": "mcwhittemore@gmail.com"
-    }
-  ],
-  "license": "MIT",
+  "name": "app-screenshots",
+  "version": "0.0.1",
+  "description": "Makes screenshots for the app-store platform of given urls",
+  "main": "appshots.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "http://github.com/brenden/node-webshot.git"
-  },
-  "engine": [ "node >=0.7.00" ],
-  "dependencies": {
-    "tmp": "~0.0.23"
-  },
-  "optionalDependencies": {
-    "phantomjs": "~1.9.7-1"
-  },
-  "devDependencies": {
-    "mocha" : "*",
-    "should": "*",
-    "imagemagick": "git://github.com/rsms/node-imagemagick.git"
-  },
-  "main": "./lib/webshot.js",
-  "scripts": {
-    "test"  : "mocha --ui bdd --reporter spec --require should --globals i ./test/tests.js"
+    "url": "https://github.com/Kah0ona/node-webshots"
   },
   "keywords": [
-    "screenshot",
+    "screenshots",
     "screengrab"
-  ]
+  ],
+  "author": "Marten Sytema",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kah0ona/node-webshots/issues"
+  },
+  "homepage": "https://github.com/Kah0ona/node-webshots",
+  "dependencies": {
+    "node-imagemagick": "^0.1.8",
+    "tmp": "0.0.24",
+    "phantomjs": "^1.9.12",
+    "imagemagick": "^0.1.3"
+
+  },
+  "devDependencies": {
+    "imagemagick": "git://github.com/rsms/node-imagemagick.git"
+  }
 }

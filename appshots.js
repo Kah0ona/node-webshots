@@ -1,16 +1,20 @@
 /** CONFIG:
  * Verander baseDir naar een map waar je wilt dat de screenshots terecht komen. In dit geval in een mapje Screenshots op de Desktop, maar dit moet je even veranderen
- * De variabele domains kun je meerdere urls invoeren. Daarvan gaat ie allemaal screens maken, en in een mapje stoppen in de screenshots map. Je krijgt dan 4 .pngs voor de appstore 
- */
+ * run het door: 
+ * `node appshots.js site1.com site2.com`
+ * Gebruik minimaal 1 domein bij de invoer
+*/
 var baseDir = '/Users/marten/Desktop/Screenshots/';
-var domains = [
- 'cestmoi-bruidsmode.com', 'thecartoonfactory.nl'
-];
+/* EINDE CONFIG, hieronder begint het script */
 
-//EINDE CONFIG, hieronder begint het script
+var domains = process.argv.slice(2);
+console.log("Screenshots maken voor de volgende urls: ");
+for(var i = 0; i < domains.length; i++){
+	console.log("- "+domains[i]);
+}
 
+var webshot = require('./lib/webshot');
 
-var webshot = require('lib/webshot');
 var options = {
   screenSize: {
     width: 320
@@ -50,30 +54,7 @@ var optionsFunctionPic = {
 , userAgent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_2 like Mac OS X; en-us)'
     + ' AppleWebKit/531.21.20 (KHTML, like Gecko) Mobile/7B298g'
 };
-/*
 
-var domains = [
-	'lokaalgevonden.nl',
-	'020container.nl',
-	'webshop.maisonluuk.nl',
-	'snoexschilderwerken.nl',
-	'stoeradvocatuur.nl',
-	'degedenkgroep.nl',
-	'euromilieu.nl',
-	'jacobs.lokaalgevonden.nl',
-	'kalishoekslotenservice.nl',
-	'mvk-kleding.lokaalgevonden.nl',
-	'naalden-rucphen.nl',
-	'ponder-administratie.nl',
-	'rent2drive.nl',
-	'rijschoolcompleet.lokaalgevonden.nl',
-	'rijschoolintense.nl',
-	'rm-facility.com',
-	'deroosendaalsestomerij.nl',
-	'the-gsmstore.nl'
-
-
-]; */
 
 for(var i = 0; i < domains.length; i++){
 	var domain = domains[i];
